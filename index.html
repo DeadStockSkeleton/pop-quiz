@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body class="bg-light">
+    <!-- Icon ,text & timer -->
+    <nav class="navbar navbar-light bg-light border-bottom">
+        <a class="navbar-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>
+            Pop<b class="text-danger">Quiz</b>
+        </a>
+
+        <p class="text-muted" id='timer'><span id="sec">60</span></p>
+    </nav>
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="quiz">
+                <div class="pt-5 mt-5 page" style="z-index: 555;" id="start">
+                    <p>Lets play a <b class="text-danger">game</b></p>
+                    <button id="startBtn" type="button" class="btn btn-danger">Start</button>
+                </div>
+                <div class="page" style="z-index: 999; display:none;" id="highscore">
+                     <h1 class="display-1">Highscore</h1>
+                     <ol id="scoreList" class=" text-left">
+                         
+                     </ol> 
+                     <div class="d-flex">
+                         <button id="restartBtn"type="button" class="btn btn-danger">restart</button>
+                         <button id="clearBtn" type="button" class="ml-4 btn btn-danger">clear</button>
+                     </div>              
+                </div>
+                <div class="pt-5 mt-5 page " style="z-index: 444; display: none;" id="q1">
+                    <h1 class="pb-5"><b class="text-danger">HTML</b> stands for</h1>
+                    <button class="btn btn-outline-danger mb-3 option" type="button" id="option">Hyperlinks and Text Markup Language</button><br>
+                    <button class="btn btn-outline-danger mb-3 option" type="button" id="answer">Hyper Text Markup Language</button><br>
+                    <button class="btn btn-outline-danger mb-3 option" type="button" id="option">Hyper Text Mario Language</button><br>
+                    <button class="btn btn-outline-danger mb-3 option" type="button" id="option">Home Tool Markup Language</button><br>
+                    <span id="status"></span>
+                      
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="./assets/script.js" async defer></script>
+</body>
+
+</html>
