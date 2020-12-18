@@ -7,6 +7,7 @@
 
 ## General info
 Pop Quiz is a simple game that utilizes ```localStorage```, ```SetIntervals```, and ```arrays``` to keep track of **users**, **scores**, and **time**. There's only **5** questions with **80** seconds on the clock. If you cant answer all questions in time, the game will end and will display a score list where you must input your first and last intials to keep track and comapre your progress!
+[Click here to play](https://deadstockskeleton.github.io/pop-quiz/)
 
 ## Sources
 W3schools. "Quiz". W3school. https://www.w3schools.com/quiztest/quiztest.asp?qtest=CSS
