@@ -1,9 +1,14 @@
 
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
 fieldset{
     height: 400px;
     overflow: hidden;
 }
 .page{
+    padding: 15px;
     background: white;
 }
 
@@ -15,4 +20,22 @@ fieldset{
     display: none;
 }
 
+button{
+    padding: 5px;
+    background: crimson;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
 
+button:hover{
+    background: rgb(175, 11, 44);
+}
+
+
+fieldset{
+    border-radius: 5px;
+    
+}

@@ -9,6 +9,7 @@ let initInp = document.getElementById("initials");
 let scoreList = document.getElementById("scoreList");
 let status = document.getElementById("status");
 const restart = document.getElementById('restart');
+const clear = document.getElementById('clear');
 let count = 0;
 let scores = [];
 let users = [];
@@ -45,7 +46,7 @@ function game() {
             for (let i = 0; i < pages.length; i++) {
               pages[i].style.display = "none";
             }
-            getScore();
+         
           }
         }, 1000);
         status.textContent = "WRONG";
@@ -73,8 +74,8 @@ function game() {
         console.log(count);
         if (count === 5) {
           hs.style.display = "block";
-          getScore();
           clearInterval(clock);
+          
         }
       }
     });
@@ -91,7 +92,7 @@ initInp.addEventListener("keyup", function (e) {
     if (this.value === "") {
       alert("Invalid Name");
     } else {
-      let userName = this.value;
+      let userName = this.value + ' - ' + time.textContent;
       users.push(userName);
       storeName();
       this.value = "";
@@ -107,20 +108,14 @@ function render() {
   scoreList.innerHTML = "";
   for (let i = 0; i < users.length; i++) {
     let li = document.createElement("li");
-    li.textContent = users[i] + "-" + time.textContent;
+    li.textContent = users[i];
     scoreList.prepend(li);
+    
   }
+  
 }
 
-function getScore() {
-  let score = time.textContent;
-  scores.push(score);
-  storeScore();
-}
 
-function storeScore() {
-  localStorage.setItem("userScore", JSON.stringify(scores));
-}
 
 function storeName() {
   localStorage.setItem("userName", JSON.stringify(users));
@@ -135,13 +130,22 @@ startBtn.addEventListener("click", function () {
 });
 
 function init(){
-  var storedN = JSON.parse(localStorage.getItem('users'));
-  var storedS = JSON.parse(localStorage.getItem('scores'));
+  time.textContent = 80;
+  var storedN = JSON.parse(localStorage.getItem('userName'));
+  var storedS = JSON.parse(localStorage.getItem('userScore'));
 
-  if (storedN !== null || storedS !== null) {
-    users = storedN;
-    storedS = scores;
-  }
+    if (storedN !== null){
+      users = storedN;
+    }
+      
+    
+    clear.addEventListener('click', function() {
+      scoreList.innerHTML = "";
+      localStorage.clear();
+    })
+  
+    
+
 
   render();
 }
