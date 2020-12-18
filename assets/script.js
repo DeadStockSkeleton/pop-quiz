@@ -106,11 +106,13 @@ initInp.addEventListener("keyup", function (e) {
   //keyup is enter
   if (key === "Enter") {
     //if value is empty, then its invalid
-    if (this.value === "") {
+    let userName = this.value.trim();
+    if (userName === '') {
+      this.value = "";
       alert("Invalid Name");
       //else push name to array and store it
     } else {
-      let userName = this.value.trim() + " - " + time.textContent;
+      userName = userName + " - " + time.textContent;
       users.push(userName);
       storeName();
       this.value = "";
